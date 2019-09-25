@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: rgba(55,138,68,1);
+    /*
+    background: -moz-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(55,138,68,1)), color-stop(27%, rgba(81,138,90,0.99)), color-stop(51%, rgba(246,246,246,0.98)), color-stop(76%, rgba(250,120,120,0.97)), color-stop(100%, rgba(250,5,5,0.96)));
+    background: -webkit-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
+    background: -o-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
+    background: -ms-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
+    background: linear-gradient(to right, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#378a44', endColorstr='#fa0505', GradientType=1 );
+    */
+}
+
+.memory-game{
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.memory-card{
+    width: calc(25% - 10px);
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip{
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face{
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    border-radius: 5px;
+}
+
+
+
+
+
