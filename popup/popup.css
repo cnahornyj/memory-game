@@ -1,0 +1,64 @@
+
+body {
+	font-family: 'Turret Road', cursive;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  background: #eee;
+}
+h3{
+	text-align : center;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: #fff;
+  border: 3px solid #ddd;
+}
+.content p {
+	text-align : center;
+}
+.center {
+	text-align: center;
+}
+  
+button {
+  padding: 10px 20px;
+  background: black;
+  color: #fff;
+  border: transparent;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  margin: auto;
+}
+#game .game-inner img{
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+#game .game-inner button{
+	display : inline-block;
+  margin: 19px auto;
+  margin-left: 40px;
+}
+#game .game-inner #restart{
+  margin-right: 39px;
+}
+#game .game-inner #newplayers{
+  margin-left: 17px;
+}
+.game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+.game-inner {
+  margin-top: 30px;
+}
+
