@@ -18,25 +18,58 @@ let firstCard, secondCard;
 
 //Création des players et du score d'entrée
 const players = [{
-    name : '',
-    img : '',
+    name : 'cartman',
+    img : 'img/Temporaire/im3.png',
     score : 100, },
-    { name : '',
-    img : '',
+    { name : 'Stan',
+    img : 'img/Temporaire/im2.png',
     score : 100,}
 ]
 
 //A qui le tour? true = joueur 1 / false = joueur 2
 let playerTurn = true;
 
-//Met le score à jour à l'appel
-function majScorePlayer (){
-    document.getElementById('scoreplayer1').innerHTML = `<p>${players[0].score}</p>`
-    document.getElementById('scoreplayer2').innerHTML = `<p>${players[1].score}</p>`
+
+// BLOC PLAYERCARD -----------------------------------------------------------------
+
+const playerCard = (score1, score2, turn) => {
+    //Nom joueur
+    document.getElementById("playerName1").innerText = `${players[0].name}`
+    document.getElementById("playerName2").innerText = `${players[1].name}`
+
+
+    //Image joueur
+    document.getElementById("playerImg1").src=`${players[0].img}`
+    document.getElementById("playerImg2").src=`${players[1].img}`
+
+
+    //Barre de vie
+    const progressBarre1 = document.getElementById("progressBarre1");
+    const progressBarre2 = document.getElementById("progressBarre2");
+
+    //Attribue le score à la variable
+    let scorePlayer1Barre = score1;
+    let scorePlayer2Barre = score2;
+
+    //Applique la valeur du score à la taille de la jauge
+    progressBarre1.style.width=`${scorePlayer1Barre}%`;
+    progressBarre2.style.width=`${scorePlayer2Barre}%`;
+
+    //Player Turn
+
+    if (turn){
+        document.getElementById("yourTurn1").style.visibility = "visible"
+        document.getElementById("yourTurn2").style.visibility = "hidden"
+    }else{
+        document.getElementById("yourTurn1").style.visibility = "hidden"
+        document.getElementById("yourTurn2").style.visibility = "visible"
+    }
+
 }
 
+//APPEL DE LA FONCTION playerCard
 
-
+playerCard(players[0].score, players[1].score, playerTurn);
 
 
 //FONCTION RANDOM CARTE ----------------------------------------------------
@@ -125,8 +158,8 @@ function checkForMatch() {
     else {
         unflipcards()
         playerTurn = !playerTurn;
-    }
-    majScorePlayer();
+        }
+    playerCard(players[0].score, players[1].score, playerTurn);
 }
 
 /* Fonction qui permet de laisser fixe les deux cartes si elles correspondent ??? */
@@ -140,7 +173,7 @@ function unflipcards() {
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-    }, 1500);
+    }, 2000);
 }
 
 cards.forEach(card => card.addEventListener('click' , flipCard))
