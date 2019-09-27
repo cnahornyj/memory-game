@@ -1,7 +1,10 @@
-const card1 = ['img/looser.gif', 'img/kickass.gif', 'img/servietsky.gif', 'img/brk.gif', 'img/geekcartman.gif', 'img/timmy.gif', 'img/whatwhat.gif', 'img/wtf.gif'];
+//DEFINITION DES VARIABLES
 
+//Tableau d'images
+const card1 = ['img/looser.gif', 'img/kickass.gif', 'img/servietsky.gif', 'img/brk.gif', 'img/geekcartman.gif', 'img/timmy.gif', 'img/whatwhat.gif', 'img/wtf.gif'];
 const tableCard1 = [...card1,...card1];
 
+//Chemin vers images et data
 const frontFace = document.getElementsByClassName('front-face');
 const data = document.getElementsByClassName('memory-card');
 
@@ -23,18 +26,68 @@ const players = [{
     score : 100,}
 ]
 
+//A qui le tour? true = joueur 1 / false = joueur 2
 let playerTurn = true;
 
+//Met le score à jour à l'appel
 function majScorePlayer (){
     document.getElementById('scoreplayer1').innerHTML = `<p>${players[0].score}</p>`
     document.getElementById('scoreplayer2').innerHTML = `<p>${players[1].score}</p>`
 }
 
-// Boucle pour attribuer img et id //
-for (let i = 0 ; i < tableCard1.length ; i++){
-    frontFace[i].src = tableCard1[i];
-    data[i].dataset.framework = tableCard1[i]
+
+
+
+
+//FONCTION RANDOM CARTE ----------------------------------------------------
+
+const randomCarte = (img, number) => {
+
+    //CREATION D'UN TABLEAU RANDOM DE 0 à 16
+
+    //Permet de créer un chiffre au hasard d'une valeur max de 'max'
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    //Permet de créer un tableau avec des chiffres aléatoire de 0 à 16
+    const tableCreation = () => {
+        const tableau = new Array(16);
+        for (let i = 0 ; i < tableau.length ; i++){
+            tableau[i] = i;
+        }
+
+        const newTableau = new Array(16);
+
+        for (let i = 0 ; i < newTableau.length ; i++){
+            let randomValue = getRandomInt(tableau.length-1)
+            newTableau[i] = tableau[randomValue]
+            tableau.splice(randomValue, 1);
+        }
+
+        return newTableau
+    }
+
+    //Créer tableau à partir de la fonction ci-dessus
+
+    const randomTable = tableCreation();
+
+    //ATTRIBUER UNE IMAGE RANDOM A UNE CASE
+
+    //Attribuer une image au hasard grace à l'index de randomTable
+
+    for (let i = 0 ; i < randomTable.length ; i++){
+
+        img[i].src = tableCard1[randomTable[i]];
+        number[i].dataset.framework = tableCard1[randomTable[i]]
+
+    }
+
 }
+
+//APPEL DE LA FONCTION randomCarte ------------------------------------------
+
+randomCarte(frontFace, data);
 
 /* Fonction click fait retourner carte  */
 function flipCard() {
