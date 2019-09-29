@@ -123,7 +123,7 @@ body{
 
 /* Effet de rétrécissement sur la carte côté face */
 .memory-card:active{
-transform: scale(.97);
+transform: scale(.90);
 }
 
 /* Effet de rotation de la carte à 180° */
@@ -146,6 +146,17 @@ transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
+/* modal fin de partie TEMPORAIRE FIN DE PARTIE */
+#modalTemp{
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
 
 
