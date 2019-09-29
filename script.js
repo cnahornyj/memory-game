@@ -31,7 +31,6 @@ let playerTurn = true;
 
 
 // BLOC PLAYERCARD -----------------------------------------------------------------
-
 const playerCard = (score1, score2, turn) => {
     //Nom joueur
     document.getElementById("playerName1").innerText = `${players[0].name}`
@@ -68,12 +67,10 @@ const playerCard = (score1, score2, turn) => {
 }
 
 //APPEL DE LA FONCTION playerCard
-
 playerCard(players[0].score, players[1].score, playerTurn);
 
 
 //FONCTION RANDOM CARTE ----------------------------------------------------
-
 const randomCarte = (img, number) => {
 
     //CREATION D'UN TABLEAU RANDOM DE 0 à 16
@@ -119,8 +116,11 @@ const randomCarte = (img, number) => {
 }
 
 //APPEL DE LA FONCTION randomCarte ------------------------------------------
-
 randomCarte(frontFace, data);
+
+
+//Attribu à chaque carte l'event Click associé à la fonction flipcard
+cards.forEach(card => card.addEventListener('click' , flipCard))
 
 /* Fonction click fait retourner carte  */
 function flipCard() {
@@ -142,6 +142,7 @@ function flipCard() {
 
 /* Création de la fonction checkForMatch permettant de vérifier si les images correspondent  */
 function checkForMatch() { 
+
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
    // isMatch ? disableCards() : unflipcards();
@@ -156,6 +157,7 @@ function checkForMatch() {
         }
     }
     else {
+        cards.forEach(card => card.removeEventListener('click' , flipCard))//empeche de retourner d'autres cartes
         unflipcards()
         playerTurn = !playerTurn;
         }
@@ -173,8 +175,9 @@ function unflipcards() {
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
+        cards.forEach(card => card.addEventListener('click' , flipCard));//Permet à nouveau de retourner les cartes
     }, 2000);
 }
 
-cards.forEach(card => card.addEventListener('click' , flipCard))
+
 
