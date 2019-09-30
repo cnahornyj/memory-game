@@ -1,4 +1,4 @@
-//DEFINITION DES VARIABLES
+//DEFINITION DES VARIABLES -------------------------------------------------------
 
 //Tableau d'images
 const card1 = ['img/looser.gif', 'img/kickass.gif', 'img/servietsky.gif', 'img/brk.gif', 'img/geekcartman.gif', 'img/timmy.gif', 'img/whatwhat.gif', 'img/wtf.gif'];
@@ -30,8 +30,7 @@ const players = [{
 let playerTurn = true;
 
 
-// BLOC PLAYERCARD -----------------------------------------------------------------
-
+// Fonction de Mise à jour des score dans les blocs player
 const playerCard = (score1, score2, turn) => {
     //Nom joueur
     document.getElementById("playerName1").innerText = `${players[0].name}`
@@ -67,13 +66,11 @@ const playerCard = (score1, score2, turn) => {
 
 }
 
-//APPEL DE LA FONCTION playerCard
-
+//Initialisation des scores
 playerCard(players[0].score, players[1].score, playerTurn);
 
 
-//FONCTION RANDOM CARTE ----------------------------------------------------
-
+//Fonction pour mélange des cartes
 const randomCarte = (img, number) => {
 
     //CREATION D'UN TABLEAU RANDOM DE 0 à 16
@@ -93,7 +90,7 @@ const randomCarte = (img, number) => {
         const newTableau = new Array(16);
 
         for (let i = 0 ; i < newTableau.length ; i++){
-            let randomValue = getRandomInt(tableau.length-1)
+            let randomValue = getRandomInt(tableau.length)
             newTableau[i] = tableau[randomValue]
             tableau.splice(randomValue, 1);
         }
@@ -118,11 +115,14 @@ const randomCarte = (img, number) => {
 
 }
 
-//APPEL DE LA FONCTION randomCarte ------------------------------------------
-
+//Mélange des cartes
 randomCarte(frontFace, data);
 
-/* Fonction click fait retourner carte  */
+
+//Attribu à chaque carte l'event Click associé à la fonction flipcard
+cards.forEach(card => card.addEventListener('click' , flipCard))
+
+//Fonction click fait retourner carte
 function flipCard() {
     this.classList.add('flip');
 
@@ -140,8 +140,9 @@ function flipCard() {
       checkForMatch();
     }
 
-/* Création de la fonction checkForMatch permettant de vérifier si les images correspondent  */
+//Création de la fonction checkForMatch permettant de vérifier si les images correspondent
 function checkForMatch() { 
+
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
    // isMatch ? disableCards() : unflipcards();
@@ -156,25 +157,37 @@ function checkForMatch() {
         }
     }
     else {
+        cards.forEach(card => card.removeEventListener('click' , flipCard))//empeche de retourner d'autres cartes
         unflipcards()
         playerTurn = !playerTurn;
         }
     playerCard(players[0].score, players[1].score, playerTurn);
+
+    if (players[0].score === 0 || players[1].score === 0){
+        document.getElementById("modalTemp").style.display="flex";
+    }
 }
 
-/* Fonction qui permet de laisser fixe les deux cartes si elles correspondent ??? */
+//Fonction qui permet de laisser fixe les deux cartes si elles correspondent ???
 function disableCards() { 
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard); 
 }
 
-/* Fonction qui permet de retourner les deux cartes si elles ne correspondent pas */
+//Fonction qui permet de retourner les deux cartes si elles ne correspondent pas
 function unflipcards() { 
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-    }, 2000);
+        cards.forEach(card => card.addEventListener('click' , flipCard));//Permet à nouveau de retourner les cartes
+    }, 1200);
 }
 
-cards.forEach(card => card.addEventListener('click' , flipCard))
 
+//TEMPORAIRE FIN DE PARTIE
+const newGame = () => {
+    document.location.href="index.html"
+}
+
+//TEMPORAIRE FIN DE PARTIE
+document.getElementById("newGame").addEventListener('click', newGame);
