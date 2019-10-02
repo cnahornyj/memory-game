@@ -124,20 +124,22 @@ cards.forEach(card => card.addEventListener('click' , flipCard))
 
 //Fonction click fait retourner carte
 function flipCard() {
-    this.classList.add('flip');
+    if (this.className!='memory-card flip'){
+        this.classList.add('flip');
 
-    if (!hasFlippedCard) {
-        // first click
-        hasFlippedCard = true;
-        firstCard = this;
+        if (!hasFlippedCard) {
+            // first click
+            hasFlippedCard = true;
+            firstCard = this;
 
-    return ;
-    } 
+        return ;
+        } 
 
-      hasFlippedCard = false;
-      secondCard = this;
-    
-      checkForMatch();
+        hasFlippedCard = false;
+        secondCard = this;
+        
+        checkForMatch();
+        }
     }
 
 //Création de la fonction checkForMatch permettant de vérifier si les images correspondent
