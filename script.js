@@ -118,6 +118,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
                 document.getElementById('btn_play').style.display = 'block';
             });
         } 
+        localStorage.setItem('player', JSON.stringify(players));
     }
 }
 
@@ -143,6 +144,8 @@ let firstCard, secondCard;
 let whosTurn = true;
 
 if (currentPage.endsWith('game.html')){
+
+    const players = JSON.parse(localStorage.getItem('player'))
 
     // Fonction de Mise à jour des score dans les blocs player
     const playerCard = (score1, score2, isturn) => {
