@@ -282,8 +282,16 @@ if (currentPage.endsWith('game.html')){
             }
         playerCard(players[0].score, players[1].score, whosTurn);
 
-        if (players[0].score === 0 || players[1].score === 0){
-            document.getElementById("modalTemp").style.display="flex";
+        //if (players[0].score === 0 || players[1].score === 0){
+          //  document.getElementById("modalTemp").style.display="flex";
+        if (players[0].score === 0 ) {
+            document.getElementById("//sourceidimage").src = players[0].picturePlayer
+           // document.getElementById("modal") .style.display ="flex"
+        }
+        if (players[1].score === 0 ) {
+            document.getElementById("//sourceidimage").src = players[1].picturePlayer
+            //document.getElementById("modal") .style.display ="flex"
+        }
         }
     }
 
@@ -304,11 +312,6 @@ if (currentPage.endsWith('game.html')){
 
 
     //TEMPORAIRE FIN DE PARTIE
-    const newGame = () => {
-        document.location.href="index.html"
-    }
-
-    //TEMPORAIRE FIN DE PARTIE
-    document.getElementById("newGame").addEventListener('click', newGame);
+    
 }
 
