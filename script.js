@@ -174,12 +174,8 @@ function disableCards() {
     secondCard.removeEventListener('click', flipCard); 
 }
 
-<<<<<<< HEAD
 
-/* Fonction qui permet de retourner les deux cartes si elles ne correspondent pas */
-=======
 //Fonction qui permet de retourner les deux cartes si elles ne correspondent pas
->>>>>>> dev
 function unflipcards() { 
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -189,9 +185,7 @@ function unflipcards() {
 }
 
 
-<<<<<<< HEAD
 
-=======
 //TEMPORAIRE FIN DE PARTIE
 const newGame = () => {
     document.location.href="index.html"
@@ -199,4 +193,18 @@ const newGame = () => {
 
 //TEMPORAIRE FIN DE PARTIE
 document.getElementById("newGame").addEventListener('click', newGame);
->>>>>>> dev
+
+
+
+
+
+// audio
+
+
+function play(){
+    const audio = document.getElementById("audio");
+    audio.play();
+    }
+
+
+
