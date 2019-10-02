@@ -15,56 +15,111 @@ body{
 
 /* BLOC PLAYER ------------------------------------------*/
 
-
-#playerBloc1, #playerBloc2{
-    background-color: rgb(255, 255, 255, .2);
-    border-radius: 16px;
-    width: 25%;
-    height: auto;
+.playerBloc{
     display: flex;
     flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 16px;
+}
+
+#lifeZone{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 16px;
     align-items: center;
 }
 
+#playerLife1{
+    width: 80%;
+    height: 40px;
+    border: 2px black solid;
+    border-right-style: none;
+    background-color: rgb(196, 20, 20);
+}
+
+#playerLife2{
+    width: 80%;
+    height: 40px;
+    border: 2px black solid;
+    border-left-style: none;
+    background-color: rgb(196, 20, 20);
+}
+
+#progressBarre1{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(71, 185, 71);
+    float: right;
+}
+
+#progressBarre2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(71, 185, 71);
+}
+
+#KO {
+    width: 120px;
+    height: 60px;
+    background-color: red;
+    border: 2px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#picName{
+    display: flex;
+    margin: auto;
+    width: 95%;
+    justify-content: space-between;
+}
+
+#playerBloc1{
+    border-radius: 16px;
+    display: flex;
+}
+
+#p1Bandeau {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#playerBloc2{
+    border-radius: 16px;
+    display: flex;
+}
+
+#p2Bandeau {
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .blocImage{
-    width:80%;
-    height: 18vw;
+    width:100px;
+    height:100px;
     border: 2px black solid;
     background-color: white;
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
 }
-
 
 #playerName1, #playerName2{
     text-align: center;
-    width: 80%;
     /*border: 1px black solid;*/
     font-size: 32pt;
-    margin: 20px 0px 20px 0px;
 }
 
 #playerImg1, #playerImg2{
     height: 80%;
-}
-
-#playerLife1, #playerLife2{
-    width: 80%;
-    height: 30px;
-    border: 2px black solid;
-    background-color: rgb(196, 20, 20);
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-#progressBarre1, #progressBarre2{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(71, 185, 71);
-    border-radius: 6px;
 }
 
 #yourTurn1, #yourTurn2{
@@ -88,16 +143,10 @@ body{
     50% { opacity: 0;} 
     }
 
-/* END OF PLAYER BLOC*/
+/* END OF PLAYER BLOC------------------------------------*/
 
 
 /*Disposition des éléments */
-.plateau{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-}
 
 /* Plateau de jeu */
 .memory-game{
