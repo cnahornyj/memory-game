@@ -9,17 +9,37 @@
 
 <body>
 
-    <div class="plateau">
-            <div id="playerBloc1">
-                <h5 id="playerName1">Your name</h5>
-                <div class="blocImage">
-                    <img id="playerImg1" src="#", alt="#" />
-                </div>
+    <div class="playerBloc">
+            <div id="lifeZone">
                 <div id="playerLife1">
                     <div id="progressBarre1"></div>
                 </div>
-                <h6 id="yourTurn1">Your turn !</h6>
+                <div id="KO"><p>KO</p></div>
+                <div id="playerLife2">   
+                    <div id="progressBarre2"></div>
+                </div>
             </div>
+            <div id="picName">
+                <div id="playerBloc1">
+                    <div class="blocImage">
+                        <img id="playerImg1" src="#", alt="#" />
+                    </div>
+                    <div id="p1Bandeau">
+                        <h5 id="playerName1">Your name</h5>
+                        <h6 id="yourTurn1">Your turn !</h6>
+                    </div>
+                </div>
+                <div id="playerBloc2">
+                    <div id="p2Bandeau">
+                        <h5 id="playerName2">Your name</h5>
+                        <h6 id="yourTurn2">Your turn !</h6>
+                    </div>
+                    <div class="blocImage">
+                        <img id="playerImg2" src="#", alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <section class="memory-game">
                     <div class="memory-card">
@@ -102,18 +122,7 @@
                         <img class="back-face" src="images/backimage.jpg" alt="imgprincipal">
                     </div>
                 </section>
-    
-            <div id="playerBloc2">
-                <h5 id="playerName2">Your name</h5>
-                <div class="blocImage">
-                    <img id="playerImg2" src="#", alt="#" />
-                </div>
-                <div id="playerLife2">   
-                    <div id="progressBarre2"></div>
-                </div>
-                <h6 id="yourTurn2">Your turn !</h6>
-            </div>
-        </div>
+
 
     <!-- temporaire fin de partie -->
     <div id="modalTemp">
