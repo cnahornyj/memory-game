@@ -13,7 +13,7 @@ const characters = [
     {
         name: "Eric Theodore Cartman",
         pictureSmall: "images/eric_cartman_small.png",
-        pictureLarge: "images/eric_cartman_large.png"
+        pictureLarge: "images/eric_cartman_large.png",
     },
     {
         name: "Stan Marsh",
@@ -99,7 +99,7 @@ const cb = (i) => {
         players[0].picturePlayer = characters[i].pictureLarge; 
         document.getElementById('img_player_one').src = players[0].picturePlayer // je change l'image du person choisi
         document.getElementById('name_player_one').innerText = players[0].name // je change le nom du perso choisi
-        turn[0].addEventListener("click", () => { // au clique du btn_ready le bouton devient vert, et c'est au tour du joueur deux de choisir son perso
+        turn[0].addEventListener("click", () => { // au clique du btn_ready le bouton devient vert, et c'est au tour du joueur deux de choisir son perso 
             playerTurn++;
             document.getElementById('btn_player_one').style.background = "url('images/btn_player_one_current.png')no-repeat";  
         });
@@ -304,20 +304,3 @@ const newGame = () => {
 //TEMPORAIRE FIN DE PARTIE
 document.getElementById("newGame").addEventListener('click', newGame);
 
-<<<<<<< HEAD
-
-
-
-
-// audio
-
-
-function play(){
-    const audio = document.getElementById("audio");
-    audio.play();
-    }
-
-
-
-=======
->>>>>>> dev
