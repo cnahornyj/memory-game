@@ -180,62 +180,65 @@ font-style: normal;
 }
 
 /* BLOC PLAYER ------------------------------------------*/
-
-.playerBloc{
+#game {
+    background: url(images/background_game.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+#gameBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.playerBloc {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: auto;
-    margin-top: 16px;
+    align-items: center;
+    text-align: center;
+    width: 20%;
 }
-
 #lifeZone{
-    width: 90%;
+    padding-top: 10px;
     display: flex;
     margin: auto;
     margin-bottom: 16px;
     align-items: center;
 }
 
-#playerLife1{
+#playerLife1, #playerLife2 {
     width: 80%;
     height: 40px;
-    border: 2px black solid;
-    border-right-style: none;
-    background-color: rgb(196, 20, 20);
-}
-
-#playerLife2{
-    width: 80%;
-    height: 40px;
-    border: 2px black solid;
     border-left-style: none;
-    background-color: rgb(196, 20, 20);
+    background-color: #e51e35;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
-#progressBarre1{
+#progressBarre1, #progressBarre2 {
     width: 100%;
     height: 100%;
-    background-color: rgb(71, 185, 71);
+    background-color: #33d670;
     float: right;
-}
-
-#progressBarre2{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(71, 185, 71);
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 #KO {
     width: 120px;
     height: 60px;
-    background-color: red;
-    border: 2px black solid;
+    background-color: #e51e35;
+    color: #0b0c14;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+#KO p {
+    font-family: 'outrunfuture';
+    font-size: 1.6em;
+    color: white;
+}
 #picName{
     display: flex;
     margin: auto;
@@ -248,29 +251,14 @@ font-style: normal;
     display: flex;
 }
 
-#p1Bandeau {
-    margin-left: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 #playerBloc2{
     border-radius: 16px;
     display: flex;
 }
 
-#p2Bandeau {
-    margin-right: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .blocImage{
     width:100px;
     height:100px;
-    border: 2px black solid;
     background-color: white;
     border-radius: 16px;
     display: flex;
@@ -279,25 +267,28 @@ font-style: normal;
 }
 
 #playerName1, #playerName2{
-    text-align: center;
-    /*border: 1px black solid;*/
-    font-size: 32pt;
-}
-
-#playerImg1, #playerImg2{
-    height: 80%;
+    font-family: 'southpark';
+    color:white;
+    font-size: 1.3em;
+    margin-top: 0;
 }
 
 #yourTurn1, #yourTurn2{
-    font-size: 24pt;
+    font-size: 2em;
     margin: 15px 0 30px 0;
-    color: rgb(40, 156, 40);
+    background: -webkit-linear-gradient(top,rgb(229,30,53) %, rgb(255,228,47)65%);
+    background: linear-gradient(to top,rgb(229,30,53) 15%, rgb(255,228,47)65%);
+    background-clip: border-box;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE42F',endColorstr='#E51E35',GradientType=1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: opacity 1.5s infinite;
+    font-family: 'outrunfuture';
+    letter-spacing: 0.1em;
 }
 
 #yourTurn1{
     visibility: hidden;
-
 }
 
 #yourTurn2{
@@ -316,24 +307,27 @@ font-style: normal;
 
 /* Plateau de jeu */
 .memory-game{
-    width: 50%;
+    width: 55%;
     height: 50vw;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     perspective: 1000px;
 }
 
 /* Carte */
 .memory-card{
     width: 20%;
-    height: 26.666%;
-    margin: 5px;
+    height: 26%;
+    margin: 10px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .10s;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(51,214,112,0.75);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(51,214,112,0.75);
+    box-shadow: 0px 0px 25px 0px rgba(51,214,1120,0.75);
 }
 
 /* Effet de rétrécissement sur la carte côté face */
