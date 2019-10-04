@@ -107,9 +107,10 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
 
     //display attributes player_one
     const turn = document.getElementsByClassName('turn');
-    const currentButton = document.getElementsByClassName
+    //const currentButton = document.getElementsByClassName
     let playerTurn = 0;
     const cb = (i) => {
+        if (playerTurn != 2){
         if (playerTurn === 0) { // c'est au tour du joueur un de jouer
             players[0].name = characters[i].name; 
             players[0].picturePlayer = characters[i].pictureLarge; 
@@ -134,6 +135,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
                 document.getElementById('btn_play').style.display = 'block';
             });
         } 
+    }
         localStorage.setItem('player', JSON.stringify(players));
     }
 }
@@ -142,7 +144,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
 //DEFINITION DES VARIABLES -------------------------------------------------------
 
 //Tableau d'images
-const card1 = ['img/looser.gif', 'img/kickass.gif', 'img/servietsky.gif', 'img/brk.gif', 'img/geekcartman.gif', 'img/timmy.gif', 'img/whatwhat.gif', 'img/wtf.gif'];
+const card1 = ['images/arms01.jpg', 'images/arms02.jpg', 'images/arms03.jpg', 'images/arms04.jpg', 'images/arms05.jpg', 'images/arms06.jpg', 'images/arms07.jpg', 'images/arms08.jpg'];
 const tableCard1 = [...card1,...card1];
 
 //Chemin vers images et data
@@ -283,17 +285,25 @@ if (currentPage.endsWith('game.html')){
 
     // isMatch ? disableCards() : unflipcards();
 
-        const sound = [{sound: new Audio("sound/fight1.mp3")}]
+        const sound = new Audio("sound/fight1.mp3");
 
         if (isMatch){
             disableCards()
             if (whosTurn){
-                players[1].score -= 20;
-                sound[0].sound.play()
+                players[1].score -= 25;
+                document.getElementById('playerImg2').style.animation = "shake 0.1s 5"
+               setTimeout(function(){
+                   document.getElementById('playerImg2').style.animation = ""
+                 }, 600)
+                 sound.play()
             }
             else{
-                players[0].score -= 20
-                sound[0].sound.play()
+                players[0].score -= 25
+                document.getElementById('playerImg1').style.animation = "shake 0.1s 5"
+                setTimeout(function(){
+                    document.getElementById('playerImg1').style.animation = ""
+                  }, 600)
+                  sound.play()
             }
         }
         else {
@@ -303,11 +313,18 @@ if (currentPage.endsWith('game.html')){
             }
         playerCard(players[0].score, players[1].score, whosTurn);
 
-        if (players[0].score === 0 || players[1].score === 0){
-            document.getElementById("modalTemp").style.display="flex";
-        }
-    }
+            if (players[0].score === 0){
+                document.getElementById("looser").src= players[0].picturePlayer
+                document.getElementById("modal").style.display = "flex"
 
+            }
+            if (players[1].score === 0){
+                document.getElementById("looser").src= players[1].picturePlayer
+                document.getElementById("modal").style.display = "flex"
+            }   
+        }
+    
+  
     //Fonction qui permet de laisser fixe les deux cartes si elles correspondent ???
     function disableCards() { 
         firstCard.removeEventListener('click', flipCard);
@@ -323,5 +340,11 @@ if (currentPage.endsWith('game.html')){
         }, 1200);
     }
 
+
+
+
+    function goToUrl (wanted) {
+        document.location.href = wanted
+    }
 
 }
