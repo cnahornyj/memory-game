@@ -104,9 +104,10 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
 
     //display attributes player_one
     const turn = document.getElementsByClassName('turn');
-    const currentButton = document.getElementsByClassName
+    //const currentButton = document.getElementsByClassName
     let playerTurn = 0;
     const cb = (i) => {
+        if (playerTurn != 2){
         if (playerTurn === 0) { // c'est au tour du joueur un de jouer
             players[0].name = characters[i].name; 
             players[0].picturePlayer = characters[i].pictureLarge; 
@@ -131,6 +132,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
                 document.getElementById('btn_play').style.display = 'block';
             });
         } 
+    }
         localStorage.setItem('player', JSON.stringify(players));
     }
 }
@@ -280,7 +282,7 @@ if (currentPage.endsWith('game.html')){
 
     // isMatch ? disableCards() : unflipcards();
 
-        const sound = [{sound: new Audio("sound/fight1.mp3")}]
+        const sound = new Audio("sound/fight1.mp3");
 
         if (isMatch){
             disableCards()
@@ -290,6 +292,7 @@ if (currentPage.endsWith('game.html')){
                setTimeout(function(){
                    document.getElementById('playerImg2').style.animation = ""
                  }, 600)
+                 sound.play()
             }
             else{
                 players[0].score -= 25
@@ -297,6 +300,7 @@ if (currentPage.endsWith('game.html')){
                 setTimeout(function(){
                     document.getElementById('playerImg1').style.animation = ""
                   }, 600)
+                  sound.play()
             }
         }
         else {
