@@ -125,7 +125,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
 //DEFINITION DES VARIABLES -------------------------------------------------------
 
 //Tableau d'images
-const card1 = ['images/arms01.jpg', 'img/kickass.gif', 'img/servietsky.gif', 'img/brk.gif', 'img/geekcartman.gif', 'img/timmy.gif', 'img/whatwhat.gif', 'img/wtf.gif'];
+const card1 = ['images/arms01.jpg', 'images/arms02.jpg', 'images/arms03.jpg', 'images/arms04.jpg', 'images/arms05.jpg', 'images/arms06.jpg', 'images/arms07.jpg', 'images/arms08.jpg'];
 const tableCard1 = [...card1,...card1];
 
 //Chemin vers images et data
