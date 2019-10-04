@@ -139,7 +139,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
 //DEFINITION DES VARIABLES -------------------------------------------------------
 
 //Tableau d'images
-const card1 = ['img/looser.gif', 'img/kickass.gif', 'img/servietsky.gif', 'img/brk.gif', 'img/geekcartman.gif', 'img/timmy.gif', 'img/whatwhat.gif', 'img/wtf.gif'];
+const card1 = ['images/arms01.jpg', 'images/arms02.jpg', 'images/arms03.jpg', 'images/arms04.jpg', 'images/arms05.jpg', 'images/arms06.jpg', 'images/arms07.jpg', 'images/arms08.jpg'];
 const tableCard1 = [...card1,...card1];
 
 //Chemin vers images et data
@@ -285,12 +285,18 @@ if (currentPage.endsWith('game.html')){
         if (isMatch){
             disableCards()
             if (whosTurn){
-                players[1].score -= 20;
-                sound[0].sound.play()
+                players[1].score -= 25;
+                document.getElementById('playerImg2').style.animation = "shake 0.1s 5"
+               setTimeout(function(){
+                   document.getElementById('playerImg2').style.animation = ""
+                 }, 600)
             }
             else{
-                players[0].score -= 20
-                sound[0].sound.play()
+                players[0].score -= 25
+                document.getElementById('playerImg1').style.animation = "shake 0.1s 5"
+                setTimeout(function(){
+                    document.getElementById('playerImg1').style.animation = ""
+                  }, 600)
             }
         }
         else {
