@@ -3,37 +3,44 @@ const characters = [
     {
         name: "Kyle Broflovski",
         pictureSmall: "images/kyle_broflovski_small.png",
-        pictureLarge: "images/kyle_broflovski_large.png"
+        pictureLarge: "images/kyle_broflovski_large.png",
+        sound: new Audio("sound/Yourastupidahole.mp3")
     },
     {
         name: "Kenny McCormick",
         pictureSmall: "images/kenny_mcCormick_small.png",
-        pictureLarge: "images/kenny_mcCormick_large.png"
+        pictureLarge: "images/kenny_mcCormick_large.png",
+        sound: new Audio("sound/Kennylaughing.mp3")
     },
     {
         name: "Eric Theodore Cartman",
         pictureSmall: "images/eric_cartman_small.png",
-        pictureLarge: "images/eric_cartman_large.png"
+        pictureLarge: "images/eric_cartman_large.png",
+        sound: new Audio("sound/Hippy.mp3")
     },
     {
         name: "Stan Marsh",
         pictureSmall: "images/stan_marsh_small.png",
-        pictureLarge: "images/stan_marsh_large.png"
+        pictureLarge: "images/stan_marsh_large.png",
+        sound: new Audio("sound/Dirtylittlebastard.mp3")
     },
     {
         name: "Chef",
         pictureSmall: "images/chef_small.png",
-        pictureLarge: "images/chef_large.png"
+        pictureLarge: "images/chef_large.png",
+        sound: new Audio("sound/chef_fromyourass.mp3")
     },
     {
         name: "Towelie",
         pictureSmall: "images/towelie_small.png",
-        pictureLarge: "images/towelie_large.png"
+        pictureLarge: "images/towelie_large.png",
+        sound: new Audio("sound/towelie_alittlehigh.mp3")
     },
     {
         name: "Timmy",
         pictureSmall: "images/timmy_small.png",
-        pictureLarge: "images/timmy_large.png"
+        pictureLarge: "images/timmy_large.png",
+        sound: new Audio("sound/timmy_scream.mp3")
     },
     {
         name:"Hennifer Lopez",
@@ -55,11 +62,13 @@ const players = [
         name: "",
         picturePlayer: "",
         score: 100,
+        sound: ""
     },
     {
         name: "",
         picturePlayer: "",
         score: 100,
+        sound: ""
     }
 ];
 
@@ -101,18 +110,22 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
         if (playerTurn === 0) { // c'est au tour du joueur un de jouer
             players[0].name = characters[i].name; 
             players[0].picturePlayer = characters[i].pictureLarge; 
+            players[0].sound = characters[i].sound;
             document.getElementById('img_player_one').src = players[0].picturePlayer // je change l'image du person choisi
             document.getElementById('name_player_one').innerText = players[0].name // je change le nom du perso choisi
             turn[0].addEventListener("click", () => { // au clique du btn_ready le bouton devient vert, et c'est au tour du joueur deux de choisir son perso
+                players[0].sound.play()
                 playerTurn++;
                 document.getElementById('btn_player_one').style.background = "url('images/btn_player_one_current.png')no-repeat";  
             });
         } else  { // c'est au tour du joueur deux de jouer
             players[1].name = characters[i].name;
             players[1].picturePlayer = characters[i].pictureLarge;
+            players[1].sound = characters[i].sound;
             document.getElementById('img_player_two').src = players[1].picturePlayer
             document.getElementById('name_player_two').innerText = players[1].name
             turn[1].addEventListener("click", () => {
+                players[1].sound.play()
                 playerTurn++;
                 document.getElementById('btn_player_two').style.background = "url('images/btn_player_two_current.png')no-repeat";  
                 document.getElementById('btn_play').style.display = 'block';
@@ -121,6 +134,7 @@ if (currentPage.endsWith('enter.html') || currentPage.endsWith('index.html')){
         localStorage.setItem('player', JSON.stringify(players));
     }
 }
+
 
 //DEFINITION DES VARIABLES -------------------------------------------------------
 
@@ -266,6 +280,8 @@ if (currentPage.endsWith('game.html')){
 
     // isMatch ? disableCards() : unflipcards();
 
+        const sound = [{sound: new Audio("sound/fight1.mp3")}]
+
         if (isMatch){
             disableCards()
             if (whosTurn){
@@ -290,11 +306,18 @@ if (currentPage.endsWith('game.html')){
             }
         playerCard(players[0].score, players[1].score, whosTurn);
 
-        if (players[0].score === 0 || players[1].score === 0){
-            document.getElementById("modalTemp").style.display="flex";
-        }
-    }
+            if (players[0].score === 0){
+                document.getElementById("looser").src= players[0].picturePlayer
+                document.getElementById("modal").style.display = "flex"
 
+            }
+            if (players[1].score === 0){
+                document.getElementById("looser").src= players[1].picturePlayer
+                document.getElementById("modal").style.display = "flex"
+            }   
+        }
+    
+  
     //Fonction qui permet de laisser fixe les deux cartes si elles correspondent ???
     function disableCards() { 
         firstCard.removeEventListener('click', flipCard);
@@ -311,12 +334,10 @@ if (currentPage.endsWith('game.html')){
     }
 
 
-    //TEMPORAIRE FIN DE PARTIE
-    const newGame = () => {
-        document.location.href="index.html"
+
+
+    function goToUrl (wanted) {
+        document.location.href = wanted
     }
 
-    //TEMPORAIRE FIN DE PARTIE
-    document.getElementById("newGame").addEventListener('click', newGame);
 }
-
