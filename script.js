@@ -280,13 +280,17 @@ if (currentPage.endsWith('game.html')){
 
     // isMatch ? disableCards() : unflipcards();
 
+        const sound = [{sound: new Audio("sound/fight1.mp3")}]
+
         if (isMatch){
             disableCards()
             if (whosTurn){
                 players[1].score -= 20;
+                sound[0].sound.play()
             }
             else{
                 players[0].score -= 20
+                sound[0].sound.play()
             }
         }
         else {
