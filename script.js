@@ -44,15 +44,18 @@ const characters = [
     },
     {
         name:"Hennifer Lopez",
-        pictureLarge: "images/hennifer_lopez_large.png"
+        pictureLarge: "images/hennifer_lopez_large.png",
+        sound: new Audio("sound/JenniferLopez.mp3")
     },
     {
         name:"The Coon",
-        pictureLarge: "images/the_coon_large.png"
+        pictureLarge: "images/the_coon_large.png",
+        sound: new Audio("sound/Coon.mp3")
     },
     {
         name:"Professor Chaos",
-        pictureLarge: "images/professor_chaos_large.png"
+        pictureLarge: "images/professor_chaos_large.png",
+        sound: new Audio("sound/Chaos.mp3")
     }
 ];
 
