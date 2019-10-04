@@ -406,12 +406,12 @@ transform: rotateY(180deg);
   }
 
   #modal-content{
-      display: none;
+      display: flex ;
       background: url(images/background_index.jpg) no-repeat;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 50%;
+      width: 30%;
       height : 70%;
       background-color: white;
   }
