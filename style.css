@@ -362,14 +362,64 @@ transform: rotateY(180deg);
 }
 
 /* modal fin de partie TEMPORAIRE FIN DE PARTIE */
-#modalTemp{
+
+
+  
+
+  h2{
+      font-family: 'southpark';
+      color : white;
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin: auto;
+    color: #fff;
+    border: transparent;
+    border-radius: 4px;
+    background-color: orange;
+    font-family: 'southpark';
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    color: white;
+    cursor: pointer;
+    background: url(images/btn_play.png) no-repeat;
+    width: 200px;
+    padding: 30px 0px;
+    text-decoration: none;
+  }
+  
+  #modal {
+    position :fixed;
+    top:0;
+    left:0;
     width: 100%;
     height: 100%;
-    background-color: brown;
-    position: absolute;
+    background: rgba(3, 0, 41, 0.9);
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-}
+    
+  }
+
+  #modal-content{
+      display: flex ;
+      background: url(images/background_index.jpg) no-repeat;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height : 70%;
+      background-color: white;
+  }
+
+#looser{
+    border : 2px solid black;
+    width: 60%;
+    height : 60%;
+  }
+ 
 
