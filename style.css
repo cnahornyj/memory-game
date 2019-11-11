@@ -3,7 +3,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 100%;
     color: black;
@@ -16,32 +15,9 @@ body {
 img {
     border: 0;
     max-width: 100%;
-    /* vertical-align: bottom; */
+    vertical-align: bottom;
     height: auto;
     display: block;
-}
-
-h1 {
-    text-align: center;
-    color: white;
-    font-family: 'outrunfuture';
-    letter-spacing: 0.2em;
-    font-size: 2em;
-}
-
-h2 {
-    font-family: 'southpark';
-    color: white;
-    letter-spacing: 0.05em;
-}
-
-p {
-    text-align: center;
-    font-family: 'southpark';
-    color: white;
-    letter-spacing: 0.05em;
-    font-size: 1.5em;
-    margin: 0 0 5px 0;
 }
 
 .container {
@@ -56,22 +32,13 @@ p {
     background: url(images/background_enter.jpg) top no-repeat;
     background-size: cover;
     height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
-.btn_enter {
+#btn_enter {
     margin-top: 50px;
     background: url(images/btn_play.png) no-repeat;
     width: 200px;
@@ -84,37 +51,30 @@ p {
     background: url(images/background_index.jpg) top no-repeat;
     background-size: cover;
     height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 }
-
+#characters_page h1 {
+    text-align: center;
+    color: white;
+    font-family: 'outrunfuture';
+    letter-spacing: 0.08em;
+}
 #btn_player_one {
     background: url(images/btn_player_one.png) no-repeat;
     display: block;
     width: 153px;
     padding: 30px 0px;
 }
-
 #btn_player_two {
     background: url(images/btn_player_two.png) no-repeat;
     display: block;
     width: 153px;
     padding: 30px 0px;
-}
 
-#btn_player_one,
-#btn_player_two,
-#btn_play,
-.btn_enter {
-    display: -webkit-box;
-    display: -ms-flexbox;
+}
+#btn_player_one, #btn_player_two, #btn_play, #btn_enter   {
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     font-family: 'southpark';
     font-size: 1.5em;
@@ -123,7 +83,6 @@ p {
     cursor: pointer;
     text-decoration: none;
 }
-
 #btn_play {
     text-align: center;
     position: absolute;
@@ -134,116 +93,90 @@ p {
     text-decoration: none;
     display: none;
 }
-
 #players {
     height: 380px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-pack: distribute;
     justify-content: space-around;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
     align-items: flex-end;
     margin-bottom: 40px;
 }
-
 #players p {
-    -ms-flex-item-align: center;
     align-self: center;
     font-family: 'outrunfuture';
     color: #E51E35;
     font-size: 4em;
 }
-
 #players .your_choice {
     width: 40%;
 }
-
-#players .your_choice .player_one,
-#players .your_choice .player_two {
-    display: -webkit-box;
-    display: -ms-flexbox;
+#players .your_choice .player_one, #players .your_choice .player_two {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
-
+#players .your_choice h2 {
+    font-family: 'southpark';
+    color: white;
+}
 #all_characters {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+    display: flex; 
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
     position: relative;
 }
-
 #all_characters img {
     border: 5px solid #FFE42F;
     margin: 10px;
     padding: 5px;
-    cursor: pointer;
 }
-
 #all_characters img:first-child {
-    -webkit-transform: perspective(350px) rotateY(-10deg);
     transform: perspective(350px) rotateY(-10deg);
 }
-
 #all_characters img:nth-child(2) {
-    -webkit-transform: perspective(390px) rotateY(8deg);
     transform: perspective(390px) rotateY(8deg);
 }
-
 #all_characters img:nth-child(3) {
-    -webkit-transform: perspective(500px) rotateY(-10deg);
     transform: perspective(500px) rotateY(-10deg);
 }
-
 #all_characters img:nth-child(4) {
-    -webkit-transform: perspective(350px) rotateY(4deg);
     transform: perspective(350px) rotateY(4deg);
 }
-
 #all_characters img:nth-child(5) {
-    -webkit-transform: perspective(350px) rotateY(5deg);
     transform: perspective(350px) rotateY(5deg);
 }
-
 #all_characters img:nth-child(6) {
-    -webkit-transform: perspective(390px) rotateY(8deg);
     transform: perspective(390px) rotateY(8deg);
 }
-
 #all_characters img:nth-child(7) {
-    -webkit-transform: perspective(350px) rotateY(-10deg);
     transform: perspective(350px) rotateY(-10deg);
 }
-
 #all_characters img:nth-child(8) {
-    -webkit-transform: perspective(350px) rotateY(4deg);
     transform: perspective(350px) rotateY(4deg);
+}
+
+/* fonts ---------------*/
+@font-face {
+    font-family: 'southpark';
+    src: url('font/southpark.eot?#iefix') format('embedded-opentype'), 
+         url('font/southpark.woff') format('woff'), url('southpark.ttf')  format('truetype'), 
+         url('font/southpark.svg#southpark') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+font-family: 'outrunfuture';
+src: url('font/outrunfuture.eot?#iefix') format('embedded-opentype'),  
+url('font/outrunfuture.woff') format('woff'), 
+url('font/outrunfuture.ttf')  format('truetype'), 
+url('font/outrunfuture.svg#outrunfuture') format('svg');
+font-weight: normal;
+font-style: normal;
 }
 
 /* BLOC PLAYER ------------------------------------------*/
@@ -252,76 +185,55 @@ p {
     background-size: cover;
     height: 100vh;
 }
-
 #game .home {
-    background: url(images/new-game.png) no-repeat;
+    font-family: 'southpark';
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    padding: 10px 0 0 10px;
     display: block;
-    width: 200px;
-    height: 198px;
-    position: absolute;
-    right: 20px;
-    bottom: 0;
 }
-
 #gameBoard {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
-
 .playerBloc {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     text-align: center;
     width: 20%;
 }
-
-#lifeZone {
-    display: -webkit-box;
-    display: -ms-flexbox;
+#lifeZone{
     display: flex;
     margin: auto;
     margin-bottom: 16px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
-#playerLife1,
-#playerLife2 {
+#playerLife1, #playerLife2 {
     width: 80%;
     height: 40px;
     border-left-style: none;
     background-color: #e51e35;
-    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
-#progressBarre1,
-#progressBarre2 {
+#progressBarre1, #progressBarre2 {
     width: 100%;
     height: 100%;
     background-color: #33d670;
     float: right;
-    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
-
-#progressBarre2 {
+#progressBarre2  {
     float: left;
 }
 
@@ -330,294 +242,209 @@ p {
     height: 60px;
     background-color: #e51e35;
     color: #0b0c14;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
-
 #KO p {
     font-family: 'outrunfuture';
     font-size: 1.6em;
     color: white;
 }
-
-#picName {
-    display: -webkit-box;
-    display: -ms-flexbox;
+#picName{
     display: flex;
     margin: auto;
     width: 95%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
-#playerBloc1 {
+#playerBloc1{
     border-radius: 16px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 }
 
-#playerBloc2 {
+#playerBloc2{
     border-radius: 16px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 }
 
-.blocImage {
-    width: 100px;
-    height: 100px;
+.blocImage{
+    width:100px;
+    height:100px;
     background-color: white;
     border-radius: 16px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
-#playerName1,
-#playerName2 {
+#playerName1, #playerName2{
     font-family: 'southpark';
-    color: white;
+    color:white;
     font-size: 1.3em;
     margin-top: 0;
 }
 
-#yourTurn1,
-#yourTurn2 {
+#yourTurn1, #yourTurn2{
     font-size: 2em;
     margin: 15px 0 30px 0;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(15%, rgb(229, 30, 53)), color-stop(65%, rgb(255, 228, 47)));
-    background: linear-gradient(to top, rgb(229, 30, 53) 15%, rgb(255, 228, 47)65%);
+    background: -webkit-linear-gradient(top,rgb(229,30,53) %, rgb(255,228,47)65%);
+    background: linear-gradient(to top,rgb(229,30,53) 15%, rgb(255,228,47)65%);
     background-clip: border-box;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE42F', endColorstr='#E51E35', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE42F',endColorstr='#E51E35',GradientType=1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-animation: opacity 1.5s infinite;
     animation: opacity 1.5s infinite;
     font-family: 'outrunfuture';
     letter-spacing: 0.1em;
 }
 
-#yourTurn1 {
+#yourTurn1{
     visibility: hidden;
 }
 
-#yourTurn2 {
+#yourTurn2{
     visibility: hidden;
 }
 
-@-webkit-keyframes opacity {
-    0% {}
-
-    50% {
-        opacity: 0;
+@keyframes opacity { 
+    0% { }
+    50% { opacity: 0;} 
     }
-}
 
-@keyframes opacity {
-    0% {}
-
-    50% {
-        opacity: 0;
-    }
-}
+/* END OF PLAYER BLOC------------------------------------*/
 
 
-/* Board Game ---------------*/
-.memory-game {
+/*Disposition des éléments */
+
+/* Plateau de jeu */
+.memory-game{
     width: 50vw;
     height: 40vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    margin: auto;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-perspective: 1000px;
     perspective: 1000px;
-    cursor: pointer;
 }
 
-.memory-card {
+/* Carte */
+.memory-card{
     border-radius: 5px;
     width: 18%;
     height: 26%;
     margin: 10px;
     position: relative;
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform .10s;
-    transition: -webkit-transform .10s;
     transition: transform .10s;
-    transition: transform .10s, -webkit-transform .10s;
-    -webkit-box-shadow: 0px 0px 25px 0px rgba(51, 214, 112, 0.75);
-    box-shadow: 0px 0px 25px 0px rgba(51, 214, 1120, 0.75);
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(51,214,112,0.75);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(51,214,112,0.75);
+    box-shadow: 0px 0px 25px 0px rgba(51,214,1120,0.75);
 }
 
 /* Effet de rétrécissement sur la carte côté face */
-.memory-card:active {
-    -webkit-transform: scale(.90);
-    transform: scale(.90);
+.memory-card:active{
+transform: scale(.90);
 }
 
 /* Effet de rotation de la carte à 180° */
-.memory-card.flip {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+.memory-card.flip{
+transform: rotateY(180deg);
 }
 
 /* Taille & position des cartes face visible & cachée */
 .front-face,
-.back-face {
+.back-face{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position : absolute;
     border-radius: 5px;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
 /* Affichage de la face cachée d'une carte */
-.front-face {
-    -webkit-transform: rotateY(180deg);
+.front-face{
     transform: rotateY(180deg);
 }
 
-/* Game Over Modal ---------------*/
-#modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* modal fin de partie TEMPORAIRE FIN DE PARTIE */
+
+
+  
+
+  h2{
+      font-family: 'southpark';
+      color : white;
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin: auto;
+    color: #fff;
+    border: transparent;
+    border-radius: 4px;
+    background-color: orange;
+    font-family: 'southpark';
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    color: white;
+    cursor: pointer;
+    background: url(images/btn_play.png) no-repeat;
+    width: 200px;
+    padding: 30px 0px;
+    text-decoration: none;
+  }
+  
+  #modal {
+    position :fixed;
+    top:0;
+    left:0;
     width: 100%;
     height: 100%;
-    background: url(images/background_index.jpg) no-repeat;
+    background: rgba(3, 0, 41, 0.9);
     display: none;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-}
+    
+  }
 
-#modal-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 30%;
-    height: 70%;
-    margin: 0 auto;
-    padding: 50px;
-}
+  #modal-content{
+      display: flex ;
+      background: url(images/background_index.jpg) no-repeat;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height : 70%;
+      background-color: white;
+  }
 
-#modal-content h1 {
-    color: #E51E35;
-    font-size: 3em;
-}
-
-#modal-content .btn_enter:last-child {
-    margin-top: 20px;
-}
-
-@-webkit-keyframes shake {
-    0% {
-        -webkit-transform: translate(0px, 0px) rotate(0deg);
-        transform: translate(0px, 0px) rotate(0deg);
-    }
-
-    25% {
-        -webkit-transform: translate(4px, 0px) rotate(1deg);
-        transform: translate(4px, 0px) rotate(1deg);
-    }
-
-    50% {
-        -webkit-transform: translate(-4px, 0px) rotate(-1deg);
-        transform: translate(-4px, 0px) rotate(-1deg);
-    }
-
-    75% {
-        -webkit-transform: translate(8px, 0px) rotate(2deg);
-        transform: translate(8px, 0px) rotate(2deg);
-    }
-
-    100% {
-        -webkit-transform: translate(-4px, 0px) rotate(-1deg);
-        transform: translate(-4px, 0px) rotate(-1deg);
-    }
-}
+#looser{
+    border : 2px solid black;
+    width: 60%;
+    height : 60%;
+  }
+ 
 
 @keyframes shake {
-    0% {
-        -webkit-transform: translate(0px, 0px) rotate(0deg);
+    0%{
         transform: translate(0px, 0px) rotate(0deg);
     }
-
-    25% {
-        -webkit-transform: translate(4px, 0px) rotate(1deg);
-        transform: translate(4px, 0px) rotate(1deg);
+    25%{
+        transform: translate(4px; 0px) rotate(1deg);
     }
-
-    50% {
-        -webkit-transform: translate(-4px, 0px) rotate(-1deg);
-        transform: translate(-4px, 0px) rotate(-1deg);
+    50%{
+        transform: translate(-4px, 0px) rotate(-1deg));
     }
-
-    75% {
-        -webkit-transform: translate(8px, 0px) rotate(2deg);
+    75%{
         transform: translate(8px, 0px) rotate(2deg);
     }
-
-    100% {
-        -webkit-transform: translate(-4px, 0px) rotate(-1deg);
+    100%{
         transform: translate(-4px, 0px) rotate(-1deg);
     }
-}
+ }
 
-
-/* fonts ---------------*/
-@font-face {
-    font-family: 'southpark';
-    src: url('fonts/southpark.eot?#iefix') format('embedded-opentype'),
-        url('fonts/southpark.woff') format('woff'), url('southpark.ttf') format('truetype'),
-        url('fonts/southpark.svg#southpark') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'outrunfuture';
-    src: url('fonts/outrunfuture.eot?#iefix') format('embedded-opentype'),
-        url('fonts/outrunfuture.woff') format('woff'),
-        url('fonts/outrunfuture.ttf') format('truetype'),
-        url('fonts/outrunfuture.svg#outrunfuture') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
