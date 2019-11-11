@@ -267,14 +267,6 @@ if (currentPage.endsWith('game.html')){
                 // first click
                 hasFlippedCard = true;
                 firstCard = this;
-                
-                if (countForCheat >= 10){
-                for (let i = 0 ; i < cards.length ; i++){
-                    if (cards[i].dataset.framework === firstCard.dataset.framework){
-                        cards[i].style.border = "2px red solid"
-                    }
-                }
-            }
 
             return ;
             } 
@@ -348,21 +340,11 @@ if (currentPage.endsWith('game.html')){
         }, 1200);
     }
 
+
+
+
     function goToUrl (wanted) {
         document.location.href = wanted
     }
-
-    //Mode triche
-    let countForCheat = 0
-    document.getElementById("KO").addEventListener('click', function(){
-        countForCheat += 1
-        console.log(countForCheat)
-        if (countForCheat === 10) {
-            document.getElementById("KO").style.border = '2px yellow solid'
-            console.log("Boum")
-        }
-    })
-
-    
 
 }
