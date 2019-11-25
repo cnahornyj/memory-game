@@ -1,59 +1,441 @@
-* {
-    padding: 0;
+/* generic css---------------*/
+html,
+body {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-size: 100%;
+    color: black;
 }
 
-body{
+body {
+    position: relative;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: bottom;
+    height: auto;
+    display: block;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+}
+
+/* page enter.html * ---------------*/
+#enter {
+    background: url(images/background_enter.jpg) top no-repeat;
+    background-size: cover;
     height: 100vh;
-    background: rgba(55,138,68,1);
-    /*
-    background: -moz-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(55,138,68,1)), color-stop(27%, rgba(81,138,90,0.99)), color-stop(51%, rgba(246,246,246,0.98)), color-stop(76%, rgba(250,120,120,0.97)), color-stop(100%, rgba(250,5,5,0.96)));
-    background: -webkit-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
-    background: -o-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
-    background: -ms-linear-gradient(left, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
-    background: linear-gradient(to right, rgba(55,138,68,1) 0%, rgba(81,138,90,0.99) 27%, rgba(246,246,246,0.98) 51%, rgba(250,120,120,0.97) 76%, rgba(250,5,5,0.96) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#378a44', endColorstr='#fa0505', GradientType=1 );
-    */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+#btn_enter {
+    margin-top: 50px;
+    background: url(images/btn_play.png) no-repeat;
+    width: 200px;
+    padding: 30px 0px;
+    text-decoration: none;
+}
+
+/* page index.html ---------------*/
+#characters_page {
+    background: url(images/background_index.jpg) top no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+#characters_page h1 {
+    text-align: center;
+    color: white;
+    font-family: 'outrunfuture';
+    letter-spacing: 0.08em;
+}
+#btn_player_one {
+    background: url(images/btn_player_one.png) no-repeat;
+    display: block;
+    width: 153px;
+    padding: 30px 0px;
+}
+#btn_player_two {
+    background: url(images/btn_player_two.png) no-repeat;
+    display: block;
+    width: 153px;
+    padding: 30px 0px;
+
+}
+#btn_player_one, #btn_player_two, #btn_play, #btn_enter   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'southpark';
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+#btn_play {
+    text-align: center;
+    position: absolute;
+    top: 415px;
+    background: url(images/btn_play.png) no-repeat;
+    width: 200px;
+    padding: 30px 0px;
+    text-decoration: none;
+    display: none;
+}
+#players {
+    height: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+#players p {
+    align-self: center;
+    font-family: 'outrunfuture';
+    color: #E51E35;
+    font-size: 4em;
+}
+#players .your_choice {
+    width: 40%;
+}
+#players .your_choice .player_one, #players .your_choice .player_two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#players .your_choice h2 {
+    font-family: 'southpark';
+    color: white;
+}
+#all_characters {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#all_characters img {
+    border: 5px solid #FFE42F;
+    margin: 10px;
+    padding: 5px;
+}
+#all_characters img:first-child {
+    transform: perspective(350px) rotateY(-10deg);
+}
+#all_characters img:nth-child(2) {
+    transform: perspective(390px) rotateY(8deg);
+}
+#all_characters img:nth-child(3) {
+    transform: perspective(500px) rotateY(-10deg);
+}
+#all_characters img:nth-child(4) {
+    transform: perspective(350px) rotateY(4deg);
+}
+#all_characters img:nth-child(5) {
+    transform: perspective(350px) rotateY(5deg);
+}
+#all_characters img:nth-child(6) {
+    transform: perspective(390px) rotateY(8deg);
+}
+#all_characters img:nth-child(7) {
+    transform: perspective(350px) rotateY(-10deg);
+}
+#all_characters img:nth-child(8) {
+    transform: perspective(350px) rotateY(4deg);
+}
+
+/* fonts ---------------*/
+@font-face {
+    font-family: 'southpark';
+    src: url('font/southpark.eot?#iefix') format('embedded-opentype'), 
+         url('font/southpark.woff') format('woff'), url('southpark.ttf')  format('truetype'), 
+         url('font/southpark.svg#southpark') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+font-family: 'outrunfuture';
+src: url('font/outrunfuture.eot?#iefix') format('embedded-opentype'),  
+url('font/outrunfuture.woff') format('woff'), 
+url('font/outrunfuture.ttf')  format('truetype'), 
+url('font/outrunfuture.svg#outrunfuture') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/* BLOC PLAYER ------------------------------------------*/
+#game {
+    background: url(images/background_game.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+#gameBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.playerBloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+}
+#lifeZone{
+    padding-top: 10px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+#playerLife1, #playerLife2 {
+    width: 80%;
+    height: 40px;
+    border-left-style: none;
+    background-color: #e51e35;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+#progressBarre1, #progressBarre2 {
+    width: 100%;
+    height: 100%;
+    background-color: #33d670;
+    float: right;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+#progressBarre2  {
+    float: left;
+}
+
+#KO {
+    width: 120px;
+    height: 60px;
+    background-color: #e51e35;
+    color: #0b0c14;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#KO p {
+    font-family: 'outrunfuture';
+    font-size: 1.6em;
+    color: white;
+}
+#picName{
+    display: flex;
+    margin: auto;
+    width: 95%;
+    justify-content: space-between;
+}
+
+#playerBloc1{
+    border-radius: 16px;
+    display: flex;
+}
+
+#playerBloc2{
+    border-radius: 16px;
+    display: flex;
+}
+
+.blocImage{
+    width:100px;
+    height:100px;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#playerName1, #playerName2{
+    font-family: 'southpark';
+    color:white;
+    font-size: 1.3em;
+    margin-top: 0;
+}
+
+#yourTurn1, #yourTurn2{
+    font-size: 2em;
+    margin: 15px 0 30px 0;
+    background: -webkit-linear-gradient(top,rgb(229,30,53) %, rgb(255,228,47)65%);
+    background: linear-gradient(to top,rgb(229,30,53) 15%, rgb(255,228,47)65%);
+    background-clip: border-box;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE42F',endColorstr='#E51E35',GradientType=1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: opacity 1.5s infinite;
+    font-family: 'outrunfuture';
+    letter-spacing: 0.1em;
+}
+
+#yourTurn1{
+    visibility: hidden;
+}
+
+#yourTurn2{
+    visibility: hidden;
+}
+
+@keyframes opacity { 
+    0% { }
+    50% { opacity: 0;} 
+    }
+
+/* END OF PLAYER BLOC------------------------------------*/
+
+
+/*Disposition des éléments */
+
+/* Plateau de jeu */
 .memory-game{
-    width: 640px;
-    height: 640px;
+    width: 50vw;
+    height: 40vw;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
-    border: 2px solid black;
-    border-radius: 5px;
+    justify-content: center;
+    perspective: 1000px;
 }
 
+/* Carte */
 .memory-card{
-    width: calc(25% - 10px);
+    border-radius: 5px;
+    width: 18%;
+    height: 26%;
+    margin: 10px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .10s;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(51,214,112,0.75);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(51,214,112,0.75);
+    box-shadow: 0px 0px 25px 0px rgba(51,214,1120,0.75);
 }
 
+/* Effet de rétrécissement sur la carte côté face */
 .memory-card:active{
-    transform: scale(.97);
-    transition: transform .2s;
+transform: scale(.90);
 }
 
+/* Effet de rotation de la carte à 180° */
 .memory-card.flip{
+transform: rotateY(180deg);
+}
+
+/* Taille & position des cartes face visible & cachée */
+.front-face,
+.back-face{
+    width: 100%;
+    height: 100%;
+    position : absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+/* Affichage de la face cachée d'une carte */
+.front-face{
     transform: rotateY(180deg);
 }
 
-.front-face,
-.back-face{
-    width: 80%;
-    height: 90%;
-    position: absolute;
-    border-radius: 5px;
-}
+/* modal fin de partie TEMPORAIRE FIN DE PARTIE */
 
 
+  
 
+  h2{
+      font-family: 'southpark';
+      color : white;
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin: auto;
+    color: #fff;
+    border: transparent;
+    border-radius: 4px;
+    background-color: orange;
+    font-family: 'southpark';
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    color: white;
+    cursor: pointer;
+    background: url(images/btn_play.png) no-repeat;
+    width: 200px;
+    padding: 30px 0px;
+    text-decoration: none;
+  }
+  
+  #modal {
+    position :fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 0, 41, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+  }
 
+  #modal-content{
+      display: flex ;
+      background: url(images/background_index.jpg) no-repeat;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height : 70%;
+      background-color: white;
+  }
+
+#looser{
+    border : 2px solid black;
+    width: 60%;
+    height : 60%;
+  }
+ 
+
+@keyframes shake {
+    0%{
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25%{
+        transform: translate(4px; 0px) rotate(1deg);
+    }
+    50%{
+        transform: translate(-4px, 0px) rotate(-1deg));
+    }
+    75%{
+        transform: translate(8px, 0px) rotate(2deg);
+    }
+    100%{
+        transform: translate(-4px, 0px) rotate(-1deg);
+    }
+ }
 
