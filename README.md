@@ -3,6 +3,6 @@
 
 https://cnahornyj.github.io/memory-game/
 
-| HTML / CSS / JavaScript Vanilla 
+HTML / CSS / JavaScript / ReactJS
 
 @ Wild Code School Lyon 
